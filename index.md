@@ -4,6 +4,8 @@
 
 
 
+日常踩坑记录：[踩坑索引](./Traps/index)
+
 其他Android组件知识点：
 
 [LocalBroadCastManager介绍](./OtherWidgets/LocalBroadcastManager)
