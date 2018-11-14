@@ -12,3 +12,4 @@
 
 [升级gradle脚本中的各依赖的版本号后却红色波浪线提示”All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). “](./Use_Same_Support_Lib)
 
+[Toast在使用上的一些坑](./Toast_Usage_Traps)
