@@ -13,3 +13,12 @@
 [MotionEvent分发流程源码解析](./OtherWidgets/MotionEvent_DispatchAnalyze)
 
 [TextView使用ClickableSpan时想去除点击时背景色的坑](./OtherWidgets/BugOfTextViewUsingATransparentBackgroundClickableSpan)
+
+
+
+常用文档：
+
+[自用的Git Alias配置](./RoutineDocs/MyGitAlias)
+
+[Git使用时遇到过的问题及解决方案集](./RoutineDocs/GitQuestionsAndAnswers)
+
