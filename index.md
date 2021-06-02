@@ -16,6 +16,12 @@
 
 
 
+零碎知识点：
+
+[Android应用 AdaptiveIcon 适配实战](./Fragmentary/android-app-adaptiveicon-action/android-app-adaptiveicon-action)
+
+
+
 常用文档：
 
 [自用的Git Alias配置](./RoutineDocs/MyGitAlias)
