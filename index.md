@@ -20,6 +20,8 @@
 
 [Android应用 AdaptiveIcon 适配实战](./Fragmentary/android-app-adaptiveicon-action/android-app-adaptiveicon-action)
 
+[应用开发中涉及的开源许可证](./Fragmentary/open-source-software-license/open-source-software-license)
+
 
 
 常用文档：
