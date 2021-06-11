@@ -25,13 +25,19 @@
 [Android JNI开发相关](./Fragmentary/android-jni/android-jni)
 
 
+
 常用文档：
 
 [自用的Git Alias配置](./RoutineDocs/MyGitAlias)
 
 [Git使用时遇到过的问题及解决方案集](./RoutineDocs/GitQuestionsAndAnswers)
 
-
-2021-05-27 - [Logcat中没有显示全部的log](./Traps/Logcat_Not_Showing_All_Logs)
-2021-05-27 - [Toast在使用上的一些坑](./Traps/Toast_Usage_Traps)
+
+
+索引生成器扫描的结果：
+
+2021-05-27 - [Logcat中没有显示全部的log](./Traps/Logcat_Not_Showing_All_Logs)
+
+2021-05-27 - [Toast在使用上的一些坑](./Traps/Toast_Usage_Traps)
+
 2021-05-27 - [升级gradle脚本中的各依赖的版本号后却红色波浪线提示”All com.android.support libraries must use the exact same version specification (mixing versions can lead to runtime crashes). “](./Traps/Use_Same_Support_Lib)
