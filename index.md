@@ -22,6 +22,7 @@
 
 [应用开发中涉及的开源许可证](./Fragmentary/open-source-software-license/open-source-software-license)
 
+[Android JNI开发相关](./Fragmentary/android-jni/android-jni)
 
 
 常用文档：
