@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "updated": "2026-11-14",
+  "projects": {
+    "studio": {
+      "kind": "registry",
+      "date": "2026-11-13",
+      "tools": [
+        {
+          "id": "badge-studio",
+          "name": "Badge Studio",
+          "version": "2.2.1",
+          "url": "https://shawlaw.github.io/studiokit/apps/badge-studio/"
+        },
+        {
+          "id": "arcade",
+          "name": "街机厅 Arcade",
+          "version": "0.8.2",
+          "url": "https://shawlaw.github.io/studiokit/apps/arcade/"
+        }
+      ],
+      "repo": "Shawlaw/studiokit"
+    },
+    "quota": {
+      "kind": "release",
+      "latest": {
+        "version": "v1.9.0",
+        "date": "2026-11-10",
+        "url": "https://github.com/Shawlaw/QuotaBarWin/releases/tag/v1.9.0"
+      },
+      "previous": [],
+      "repo": "Shawlaw/QuotaBarWin"
+    },
+    "logcat": {
+      "kind": "release",
+      "latest": {
+        "version": "v0.9.4",
+        "date": "2026-11-10",
+        "url": "https://github.com/Shawlaw/LogcatX/releases/tag/v0.9.4"
+      },
+      "previous": [],
+      "repo": "Shawlaw/LogcatX"
+    },
+    "clip": {
+      "kind": "release",
+      "latest": {
+        "version": "v1.0.13",
+        "date": "2026-05-19",
+        "url": "https://github.com/Shawlaw/clipimg-for-wsl2/releases/tag/v1.0.13"
+      },
+      "previous": [],
+      "repo": "Shawlaw/clipimg-for-wsl2"
+    },
+    "gradle": {
+      "kind": "release",
+      "latest": null,
+      "previous": [],
+      "repo": "Shawlaw/gradlew-jdk-local"
+    },
+    "desk": {
+      "kind": "release",
+      "latest": null,
+      "previous": [],
+      "repo": "Shawlaw/DeskFoundry"
+    },
+    "shell": {
+      "kind": "release",
+      "latest": null,
+      "previous": [],
+      "repo": "Shawlaw/ShellSnippets"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "projects": [
+    {
+      "id": "studio",
+      "repo": "Shawlaw/studiokit",
+      "name": "StudioKit",
+      "group": "portal",
+      "description": "打开即用的浏览器工具箱。",
+      "category": "浏览器工具与小游戏",
+      "homepage": "https://shawlaw.github.io/studiokit/",
+      "registry": "https://shawlaw.github.io/studiokit/shared/tool-registry.json",
+      "activity_label": "StudioKit 继续迭代",
+      "registry_activity_order": [
+        "arcade",
+        "badge-studio"
+      ],
+      "registry_activity_labels": {
+        "街机厅 Arcade": "Arcade"
+      }
+    },
+    {
+      "id": "quota",
+      "repo": "Shawlaw/QuotaBarWin",
+      "name": "QuotaBarWin",
+      "group": "featured",
+      "description": "在 Windows 托盘查看多个 AI 服务与账号的剩余额度、用量和重置时间。",
+      "category": "Windows · AI 用量",
+      "activity_detail": "Windows AI 额度监控",
+      "icon": "q-icon.webp",
+      "screenshot": "q-screen.webp",
+      "screenshot_caption": "截图 · v1.8.1",
+      "screenshot_tint": "quota",
+      "screenshot_source": {
+        "ref": "main",
+        "path": "assets/screenshots/readme-zh-overview.png",
+        "seed_sha256": "22fd55df819f8fceb6ecf98142c6d31e42d48e51f617eddb89f7c95581d144e4"
+      },
+      "description_source": "github",
+      "description_baseline": "Windows 专用的 AI 用量 / 额度监控工具，支持多 Provider、多账号与托盘查看。Windows-only AI usage and quota monitor with multi-provider, multi-account, and tray support."
+    },
+    {
+      "id": "logcat",
+      "repo": "Shawlaw/LogcatX",
+      "name": "LogcatX",
+      "group": "featured",
+      "description": "用桌面界面管理多台 Android 设备，并行采集 ADB logcat。",
+      "category": "Windows · Android 调试",
+      "activity_detail": "多设备 ADB 日志",
+      "icon": "l-icon.webp",
+      "screenshot": "l-screen.webp",
+      "screenshot_tint": "logcat",
+      "screenshot_source": {
+        "ref": "master",
+        "path": "assets/screenshots/readme-zh-devices.png",
+        "seed_sha256": "6639bc997eb39abc70963b5a0c6967767d2f235512b3231645843381c5d1f1bf"
+      },
+      "description_source": "github",
+      "description_baseline": "LogcatX - Windows-first desktop GUI tool for collecting adb logcat from multiple Android devices"
+    },
+    {
+      "id": "clip",
+      "repo": "Shawlaw/clipimg-for-wsl2",
+      "name": "clipImg",
+      "group": "tools",
+      "description": "把 Windows 剪贴板里的图片或文件变成 WSL2、Docker 和 CLI 可用的路径。",
+      "category": "Windows · WSL2",
+      "activity_detail": "Windows 与 WSL2 剪贴板桥接",
+      "icon": "c-icon.webp",
+      "description_source": "github",
+      "description_baseline": "An application to support copy-paste img into WSL2's terminal."
+    },
+    {
+      "id": "gradle",
+      "repo": "Shawlaw/gradlew-jdk-local",
+      "name": "gradlew-jdk-local",
+      "group": "tools",
+      "description": "给 Gradle Wrapper 加上项目级 JDK 配置，让 IDE 和终端使用同一个 JDK。",
+      "category": "Gradle · JDK",
+      "glyph": "⌘",
+      "milestone": {
+        "date": "2026-06-17",
+        "title": "gradlew-jdk-local",
+        "meta": "仓库更新 · 统一 Gradle 的本地 JDK"
+      },
+      "description_source": "github",
+      "description_baseline": "Gradle Wrapper 补丁，统一从 local.properties 和 .gradle/config.properties 读取本地 JDK 配置，解决 IDE 与命令行 JDK 版本不一致的问题。 Gradle Wrapper patch to unify local JDK configuration from local.properties and .gradle/config.properties."
+    },
+    {
+      "id": "desk",
+      "repo": "Shawlaw/DeskFoundry",
+      "name": "DeskFoundry",
+      "group": "tools",
+      "description": "从桌面工具提炼的 Rust 公共模块，覆盖日志、配置、通知与签名更新。",
+      "category": "Rust · 桌面开发",
+      "glyph": "▤",
+      "milestone": {
+        "date": "2026-10-28",
+        "title": "DeskFoundry 公共模块",
+        "meta": "仓库更新 · Rust 桌面应用基础设施"
+      },
+      "description_source": "github",
+      "description_baseline": null
+    },
+    {
+      "id": "shell",
+      "repo": "Shawlaw/ShellSnippets",
+      "name": "ShellSnippets",
+      "group": "tools",
+      "description": "日常 Shell 脚本片段，包括一个用于合并视频的脚本。",
+      "category": "Shell · 脚本",
+      "glyph": ">_",
+      "description_source": "github",
+      "description_baseline": null
+    }
+  ]
+}

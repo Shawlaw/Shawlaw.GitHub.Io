@@ -1,0 +1,6 @@
+/_site/
+/_homepage-cache/
+/_homepage-media/
+/.jekyll-cache/
+/.jekyll-metadata
+__pycache__/

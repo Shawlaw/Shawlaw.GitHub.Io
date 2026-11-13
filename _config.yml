@@ -1,0 +1,6 @@
+exclude:
+  - homepage/
+  - tools/
+  - idx_generator.py
+  - _homepage-cache/
+  - _homepage-media/

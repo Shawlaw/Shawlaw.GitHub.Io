@@ -1,0 +1,99 @@
+name: GitHub Pages
+
+on:
+  push:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [homepage-sync]
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: shawlaw-pages
+  cancel-in-progress: false
+
+jobs:
+  pages:
+    if: github.ref_name == github.event.repository.default_branch && github.ref_type == 'branch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Restore published snapshot
+        uses: actions/cache/restore@v4
+        with:
+          path: _homepage-cache
+          key: shawlaw-pages-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: shawlaw-pages-v1-
+
+      - name: Refresh public project data
+        id: refresh
+        env:
+          GH_TOKEN: ${{ secrets.HOMEPAGE_SYNC_TOKEN || github.token }}
+        run: python3 tools/sync_homepage.py --cache _homepage-cache --out _homepage-media
+
+      - name: Check whether publication is needed
+        id: plan
+        shell: bash
+        env:
+          CHANGED: ${{ steps.refresh.outputs.changed }}
+        run: |
+          previous="$(cat _homepage-cache/deployed-sha 2>/dev/null || true)"
+          if [[ "$CHANGED" == true || "$previous" != "$GITHUB_SHA" || "$GITHUB_EVENT_NAME" == workflow_dispatch ]]; then
+            echo 'deploy=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'deploy=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Configure GitHub Pages
+        if: steps.plan.outputs.deploy == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Build existing Markdown articles
+        if: steps.plan.outputs.deploy == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Build homepage and verify site
+        if: steps.plan.outputs.deploy == 'true'
+        run: |
+          python3 tools/homepage.py build --status _homepage-cache/status.json --out _site
+          if [[ -d _homepage-media/project-media ]]; then
+            cp -r _homepage-media/project-media _site/
+          fi
+          python3 tools/check_homepage.py --site _site --status _homepage-cache/status.json
+
+      - name: Upload Pages artifact
+        if: steps.plan.outputs.deploy == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy
+        if: steps.plan.outputs.deploy == 'true'
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Record successful deployment
+        if: steps.plan.outputs.deploy == 'true'
+        run: printf '%s\n' "$GITHUB_SHA" > _homepage-cache/deployed-sha
+
+      - name: Save published snapshot
+        if: steps.plan.outputs.deploy == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: _homepage-cache
+          key: shawlaw-pages-v1-${{ github.run_id }}-${{ github.run_attempt }}
