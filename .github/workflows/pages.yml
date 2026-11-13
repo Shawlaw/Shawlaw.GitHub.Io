@@ -70,6 +70,8 @@ jobs:
       - name: Build homepage and verify site
         if: steps.plan.outputs.deploy == 'true'
         run: |
+          # The Jekyll container writes the site as root.
+          sudo chown -R "$(id -u):$(id -g)" _site
           python3 tools/homepage.py build --status _homepage-cache/status.json --out _site
           if [[ -d _homepage-media/project-media ]]; then
             cp -r _homepage-media/project-media _site/
