@@ -168,10 +168,12 @@ def activity(project, state):
         if state.get("date"):
             yield state["date"], project.get("activity_label", project["name"]), (
                 f"站点 · {detail}" if detail else "站点"), project["homepage"]
-    for rel in ([state["latest"]] if state.get("latest") else []) + state.get("previous", []):
+        return
+    rel = state.get("latest")
+    if rel:
         detail = project.get("activity_detail", project["category"])
         yield rel["date"], f"{project['name']} {rel['version']}", f"GitHub Release · {detail}", rel["url"]
-    if "milestone" in project:
+    elif "milestone" in project:
         event = project["milestone"]
         yield event["date"], event["title"], event["meta"], repo_url(project)
 

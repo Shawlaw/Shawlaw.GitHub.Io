@@ -67,10 +67,10 @@ def release_snapshot(release, repo):
             "url": f"https://github.com/{repo}/releases/tag/{quote(tag, safe='')}"}
 
 
-def sync_release(project, previous, metadata, token):
+def sync_release(project, metadata, token):
     repo = project["repo"]
     endpoint = API + repo
-    snapshot = {"kind": "release", "latest": None, "previous": []}
+    snapshot = {"kind": "release", "latest": None}
     description = metadata.get("description")
     if (project.get("description_source") == "github" and isinstance(description, str)
             and description.strip() and description != project.get("description_baseline")):
@@ -85,16 +85,6 @@ def sync_release(project, previous, metadata, token):
                 f"{repo} 的 Release 接口返回不一致")
         return snapshot
     snapshot["latest"] = release_snapshot(latest, repo)
-    keep = {
-        release["version"] for release in [previous.get("latest"), *previous.get("previous", [])]
-        if release
-    } - {snapshot["latest"]["version"]}
-    if keep:
-        recent = json_fetch(endpoint + "/releases?per_page=30", token)
-        snapshot["previous"] = [
-            release_snapshot(r, repo) for r in recent
-            if not r["draft"] and not r["prerelease"] and r["tag_name"] in keep
-        ][:5]
     return snapshot
 
 
@@ -177,7 +167,7 @@ def sync(cache, publish, token):
             if project["group"] == "portal":
                 new = sync_registry(project, old, metadata)
             else:
-                new = sync_release(project, old, metadata, token)
+                new = sync_release(project, metadata, token)
         except (OSError, ValueError, TypeError, KeyError) as error:
             errors.append(f"{ident}: {error}")
             new = {key: val for key, val in old.items() if key != "screenshot"}

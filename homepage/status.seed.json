@@ -28,7 +28,6 @@
         "date": "2026-11-10",
         "url": "https://github.com/Shawlaw/QuotaBarWin/releases/tag/v1.9.0"
       },
-      "previous": [],
       "repo": "Shawlaw/QuotaBarWin"
     },
     "logcat": {
@@ -38,7 +37,6 @@
         "date": "2026-11-10",
         "url": "https://github.com/Shawlaw/LogcatX/releases/tag/v0.9.4"
       },
-      "previous": [],
       "repo": "Shawlaw/LogcatX"
     },
     "clip": {
@@ -48,25 +46,21 @@
         "date": "2026-05-19",
         "url": "https://github.com/Shawlaw/clipimg-for-wsl2/releases/tag/v1.0.13"
       },
-      "previous": [],
       "repo": "Shawlaw/clipimg-for-wsl2"
     },
     "gradle": {
       "kind": "release",
       "latest": null,
-      "previous": [],
       "repo": "Shawlaw/gradlew-jdk-local"
     },
     "desk": {
       "kind": "release",
       "latest": null,
-      "previous": [],
       "repo": "Shawlaw/DeskFoundry"
     },
     "shell": {
       "kind": "release",
       "latest": null,
-      "previous": [],
       "repo": "Shawlaw/ShellSnippets"
     }
   }
