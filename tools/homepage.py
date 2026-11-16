@@ -7,6 +7,7 @@ import json
 from hashlib import sha256
 from pathlib import Path
 import re
+from shutil import copyfile
 from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -210,6 +211,7 @@ def render(output, state):
     html = re.sub(r"@@[A-Z_]+@@", lambda match: replacements[match[0]], template)
     output.mkdir(parents=True, exist_ok=True)
     (output / "index.html").write_text(html, encoding="utf-8", newline="\n")
+    copyfile(HOME / "assets" / "favicon.ico", output / "favicon.ico")
 
 
 def main():
